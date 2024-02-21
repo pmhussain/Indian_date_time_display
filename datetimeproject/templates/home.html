@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+</head>
+<body>
+    <h1>Home page</h1>
+    <h5>Current Date and Time is :</h5>
+    <h3>{{presentdatetime}}</h3>
+
+    <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Roll No</th>
+            <th>Create at</th>
+            <th>Updated at</th>
+          </tr>
+        </thead>
+        <tbody>
+            {%for student in students%}
+          <tr>
+            <td>{{student.name}}</td>
+            <td>{{student.rno}}</td>
+            <td>{{student.created_at|date:"d-m-Y H:i:s a" }}</td>
+            <td>{{student.updated_at}}</td>
+            {%endfor%}
+          </tr>
+        </tbody>
+      </table>
+
+</body>
+</html>
